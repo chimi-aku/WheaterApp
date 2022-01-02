@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="ManageLocationTitle">Manage Location</string>
+    <string name="editTextLocation">Add new location</string>
+</resources>

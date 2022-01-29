@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Chimi/Desktop/PB SEM V/SM/WeatherApp/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/Chimi/Desktop/PB SEM V/SM/WeatherApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Chimi/Desktop/PB SEM V/SM/WeatherApp/app/src/main/res/layout/activity_manage_location.xml" value="0.25" />
+        <entry key="..\:/Users/Chimi/Desktop/PB SEM V/SM/WeatherApp/app/src/main/res/layout/dialog_update.xml" value="0.2390625" />
+        <entry key="..\:/Users/Chimi/Desktop/PB SEM V/SM/WeatherApp/app/src/main/res/layout/list_row_main.xml" value="0.24427083333333333" />
       </map>
     </option>
   </component>

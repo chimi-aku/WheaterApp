@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Go to manege Location
         manageLocationButton = findViewById(R.id.ManageLocationButton);
         manageLocationButton.setOnClickListener(new View.OnClickListener() {
             @Override

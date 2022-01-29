@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ManageLocation"
->
+    android:orientation="vertical"
+    tools:context=".ManageLocation">
 
 
     <TextView
@@ -15,9 +15,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/ManageLocationTitle"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/editTextLocation"
@@ -28,9 +26,7 @@
         android:hint="@string/editTextLocation"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ManageLocationTitle" />
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/btnAddLocation"
@@ -38,32 +34,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/addLocationButtonText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLocation" />
+        android:layout_gravity="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLocationsList"
-        android:layout_width="341dp"
-        android:layout_height="475dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddLocation"
+        android:layout_width="339dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="10dp"
         tools:listitem="@layout/list_row_main"
-        android:layout_marginTop="60dp"
-        />
+        android:layout_gravity="center"/>
 
     <!--    <ListView-->
-<!--        android:id="@+id/lvLocationsList"-->
-<!--        android:layout_width="409dp"-->
-<!--        android:layout_height="526dp"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        android:layout_marginEnd="24dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.51"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btnAddLocation" />-->
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--        android:id="@+id/lvLocationsList"-->
+    <!--        android:layout_width="409dp"-->
+    <!--        android:layout_height="526dp"-->
+    <!--        android:layout_marginStart="24dp"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:layout_marginEnd="24dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.51"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/btnAddLocation" />-->
+</LinearLayout>

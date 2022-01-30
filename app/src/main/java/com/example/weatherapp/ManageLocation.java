@@ -24,6 +24,7 @@ public class ManageLocation extends AppCompatActivity {
     RoomDB database;
     MainAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -57,8 +58,10 @@ public class ManageLocation extends AppCompatActivity {
                 if(!sText.equals("")) {
                     MainData data = new MainData();
                     data.setLocation(sText);
+                    data.setChosen(false);
                     database.mainDao().insert(data);
                     newLocation.setText("");
+
                     // Notify when data is inserted
                     dataList.clear();
                     dataList.addAll(database.mainDao().getAll());

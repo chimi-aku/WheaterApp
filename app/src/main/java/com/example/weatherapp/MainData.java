@@ -9,13 +9,16 @@ import java.io.Serializable;
 //Define table name
 @Entity(tableName = "tableLocation")
 public class MainData implements Serializable {
-    //Create id column
+    // Create id column
     @PrimaryKey(autoGenerate = true)
     private int ID;
 
-    //Create location column
+    // Create location column
     @ColumnInfo(name = "location")
     private String location;
+
+    // Create chosen colum
+    private boolean chosen;
 
     // Generate getter and setter
 
@@ -33,5 +36,13 @@ public class MainData implements Serializable {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public boolean isChosen() {
+        return chosen;
+    }
+
+    public void setChosen(boolean chosen) {
+        this.chosen = chosen;
     }
 }

@@ -90,6 +90,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                         dataList.clear();
                         dataList.addAll(database.mainDao().getAll());
                         notifyDataSetChanged();
+
                     }
                 });
 
@@ -112,6 +113,24 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
             }
         });
+
+        holder.btnChoose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Initialize main data
+                MainData d = dataList.get(holder.getAdapterPosition());
+                int sId = d.getID();
+
+                MyProperties.getInstance().chosenLocation = d;
+
+
+
+
+            }
+        });
+
+
+
     }
 
     @Override
@@ -121,7 +140,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
-        ImageView btnEdit, btnDelete;
+        ImageView btnEdit, btnDelete, btnChoose;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -129,6 +148,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             textView = itemView.findViewById(R.id.text_view);
             btnEdit = itemView.findViewById(R.id.btnEdit);
             btnDelete = itemView.findViewById(R.id.btnDelete);
+            btnChoose = itemView.findViewById(R.id.btnChoose);
         }
+    }
+
+    private void saveChosenToProperties(List<MainData> d) {
+
+        if(d.size() == 1) {
+            MainData newChosen = d.get(0);
+            MyProperties.getInstance().chosenLocation.setLocation(newChosen.getLocation());
+        }
+
     }
 }

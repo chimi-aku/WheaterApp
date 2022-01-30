@@ -27,4 +27,16 @@ public interface MainDao {
     @Query("SELECT * FROM tableLocation")
     List<MainData> getAll();
 
+    // Get chosen location query
+    @Query("SELECT * FROM tableLocation WHERE chosen = 1")
+    List<MainData> getChosenLocation();
+
+    // Update chosen location
+    @Query("UPDATE tableLocation SET chosen = :chosen WHERE ID = :sID")
+    void updateChosenLocation(int sID, boolean chosen);
+
+    // Reset All locations
+    @Query("UPDATE tableLocation SET chosen = 0")
+    void resetAll();
+
 }

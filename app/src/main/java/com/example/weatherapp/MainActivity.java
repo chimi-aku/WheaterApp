@@ -30,6 +30,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -97,17 +99,18 @@ public class MainActivity extends AppCompatActivity {
         // Get instance of singletone which contains location
         _myProperties = MyProperties.getInstance();
 
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        // Get permissions
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_CODE);
-
         }
 
-        //Location location = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
-
-        //cityNameFromCurrLocation = getCityNameFromCords(location.getLongitude(), location.getLatitude());
-
+        // Get current location
+        FusedLocationProviderClient locationProviderClient =  LocationServices.getFusedLocationProviderClient(this);
+        locationProviderClient.getLastLocation().addOnSuccessListener(l -> {
+            cityNameFromCurrLocation = getCityNameFromCords(l.getLongitude(), l.getLatitude());
+        });
 
 
         // Get whether for current location

@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Location location = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
 
-        //cityNameFormCurrLocation = getCityNameFromCords(location.getLongitude(), location.getLatitude());
+        //cityNameFromCurrLocation = getCityNameFromCords(location.getLongitude(), location.getLatitude());
 
 
 
@@ -126,7 +127,8 @@ public class MainActivity extends AppCompatActivity {
 
         if(_myProperties.chosenLocation != null && !_myProperties.chosenLocation.getLocation().equals("")) {
             cityName = _myProperties.chosenLocation.getLocation();
-            tvCityName.setText(cityName);
+            //tvCityName.setText(cityName);
+            //Toast.makeText(this, cityName, Toast.LENGTH_SHORT).show();
             getWeatherInfo(cityName);
 
         }
@@ -183,16 +185,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void  getWeatherInfo(String cityName){
-        String url = "http://api.weatherapi.com/v1/current.json?key=53ebad91dc4546bb928103433212812&q="+ cityName +"&days=1&aqi=no";
-
+        String url = "https://api.weatherapi.com/v1/forecast.json?key=53ebad91dc4546bb928103433212812&q=" + cityName + "&days=1&aqi=yes&alerts=yes";
+        //Toast.makeText(this, cityName, Toast.LENGTH_SHORT).show();
         tvCityName.setText(cityName);
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                pbLoading.setVisibility(View.GONE);
-                rlHome.setVisibility(View.VISIBLE);
+//                pbLoading.setVisibility(View.GONE);
+//                rlHome.setVisibility(View.VISIBLE);
                 weatherRVModelArrayList.clear();
 
                 try {

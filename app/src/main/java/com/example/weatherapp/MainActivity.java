@@ -112,6 +112,13 @@ public class MainActivity extends AppCompatActivity {
             cityNameFromCurrLocation = getCityNameFromCords(l.getLongitude(), l.getLatitude());
         });
 
+        // Get whether for current location on app start
+        //tvCityName.setText(cityNameFromCurrLocation);
+        cityName = cityNameFromCurrLocation;
+        _myProperties.chosenLocationCityName = cityName;
+        getWeatherInfo(cityName);
+
+
 
         // Get whether for current location
         btnGetMyLocation.setOnClickListener(new View.OnClickListener(){
@@ -134,6 +141,10 @@ public class MainActivity extends AppCompatActivity {
             //Toast.makeText(this, cityName, Toast.LENGTH_SHORT).show();
             getWeatherInfo(cityName);
 
+        }
+        else if(_myProperties.chosenLocationCityName != null && !_myProperties.chosenLocationCityName.equals("")) {
+            cityName = _myProperties.chosenLocationCityName;
+            getWeatherInfo(cityName);
         }
         else {
             tvCityName.setText("No location is chosen");

@@ -4,6 +4,7 @@ public class MyProperties {
     private static MyProperties mInstance= null;
 
     MainData chosenLocation;
+    String chosenLocationCityName;
 
     protected MyProperties(){}
 

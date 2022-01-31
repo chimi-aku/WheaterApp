@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/black_shade_1">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:background="@color/black_shade_2"
         android:orientation="horizontal"
         android:padding="16dp"
-        android:background="@color/black_shade_1">
+        >
 
         <TextView
+            android:id="@+id/text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/text_view"
-            android:textSize="14sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="14sp" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/btnChoose"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/ic_choose"
-            />
-
-        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_choose_white" />
+
+        <ImageView
             android:id="@+id/btnEdit"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/ic_edit"
-            />
-
-        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnDelete"
             android:layout_marginStart="8dp"
-            android:src="@drawable/ic_delete"
-            />
+            android:src="@drawable/ic_edit_white" />
+
+        <ImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_delete_white" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

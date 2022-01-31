@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/rvWeatherForecast"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="50dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 

@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ManageLocation">
+    tools:context=".ManageLocation"
+    android:background="@color/black_shade_1">
+
 
 
     <TextView
@@ -15,7 +17,9 @@
         android:layout_marginTop="32dp"
         android:text="@string/ManageLocationTitle"
         android:textSize="20sp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
+
 
     <EditText
         android:id="@+id/editTextLocation"
@@ -26,7 +30,10 @@
         android:hint="@string/editTextLocation"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"/>
+
 
     <Button
         android:id="@+id/btnAddLocation"
@@ -36,23 +43,17 @@
         android:text="@string/addLocationButtonText"
         android:layout_gravity="center"/>
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLocationsList"
         android:layout_width="339dp"
         android:layout_height="400dp"
         android:layout_marginTop="10dp"
         tools:listitem="@layout/list_row_main"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        />
 
-    <!--    <ListView-->
-    <!--        android:id="@+id/lvLocationsList"-->
-    <!--        android:layout_width="409dp"-->
-    <!--        android:layout_height="526dp"-->
-    <!--        android:layout_marginStart="24dp"-->
-    <!--        android:layout_marginTop="24dp"-->
-    <!--        android:layout_marginEnd="24dp"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.51"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/btnAddLocation" />-->
+
+
+
 </LinearLayout>

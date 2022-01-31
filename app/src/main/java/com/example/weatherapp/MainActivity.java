@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         weatherRVAdapter = new WeatherRVAdapter(this, weatherRVModelArrayList);
         rvWeatherForecast.setAdapter(weatherRVAdapter);
 
-        // Get instance of singletone which contains location
+        // Get instance of Singleton which contains location
         _myProperties = MyProperties.getInstance();
 
 
@@ -188,6 +188,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void  getWeatherInfo(String cityName){
+        // Loading screen switching
+        pbLoading.setVisibility(View.VISIBLE);
+        rlHome.setVisibility(View.GONE);
+
         String url = "https://api.weatherapi.com/v1/forecast.json?key=53ebad91dc4546bb928103433212812&q=" + cityName + "&days=1&aqi=yes&alerts=yes";
         //Toast.makeText(this, cityName, Toast.LENGTH_SHORT).show();
         tvCityName.setText(cityName);
@@ -196,8 +200,10 @@ public class MainActivity extends AppCompatActivity {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-//                pbLoading.setVisibility(View.GONE);
-//                rlHome.setVisibility(View.VISIBLE);
+                // Loading screen switching
+                pbLoading.setVisibility(View.GONE);
+                rlHome.setVisibility(View.VISIBLE);
+
                 weatherRVModelArrayList.clear();
 
                 try {
